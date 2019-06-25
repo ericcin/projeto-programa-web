@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 24-Jun-2019 às 23:35
+-- Generation Time: 07-Jun-2019 às 05:50
 -- Versão do servidor: 10.1.40-MariaDB
 -- versão do PHP: 7.1.29
 
@@ -42,18 +42,7 @@ CREATE TABLE `album` (
 INSERT INTO `album` (`id_Album`, `capa`, `titulo_album`, `albumcreated`) VALUES
 (1, 'imagens_thumb/gretchen1.jpg', 'gretchen1', '0000-00-00 00:00:00'),
 (2, 'imagens_thumb/gretchen2.jpg', 'gretchen2', '0000-00-00 00:00:00'),
-(10, 'imagens_thumb/97c7b632b61e551db8209769d23ec772.png', 'pop', '2019-06-07 00:47:38'),
-(11, 'imagens_thumb/05832338f2e46312418f736bd604c96a.png', 'pop2', '2019-06-21 11:04:24');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `customers`
---
-
-CREATE TABLE `customers` (
-  `a` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(10, 'imagens_thumb/97c7b632b61e551db8209769d23ec772.png', 'pop', '2019-06-07 00:47:38');
 
 -- --------------------------------------------------------
 
@@ -78,11 +67,7 @@ INSERT INTO `imagens` (`id_imagem`, `imagem`, `titulo`, `Titulo_album`, `id_albu
 (1, 'imagens_thumb/meme1.jpg', 'meme1', 'ricardo', 1, '0000-00-00 00:00:00'),
 (2, 'imagens_thumb/meme2.jpg', 'meme2', 'ricardo', 1, '0000-00-00 00:00:00'),
 (3, 'imagens_thumb/meme3.jpg', 'meme3', 'ricardo', 2, '0000-00-00 00:00:00'),
-(4, 'imagens_thumb/meme4.jpg', 'meme4', 'ricardo', 2, '0000-00-00 00:00:00'),
-(5, 'imagens_thumb/dfd91889f7d9ee545259c5479882135c.png', '', '', 10, '2019-06-21 11:04:00'),
-(6, 'imagens_thumb/00e90b1207b10716461a86e67119360b.jpg', '', '', 11, '2019-06-21 13:19:16'),
-(7, 'imagens_thumb/a4bcbd8a9a63809befe51e38ea9c94fa.png', '', '', 1, '2019-06-22 12:37:59'),
-(8, 'imagens_thumb/2764ae41963584d707e042c6052f8ad8.jpg', '', '', 1, '2019-06-22 12:48:22');
+(4, 'imagens_thumb/meme4.jpg', 'meme4', 'ricardo', 2, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -137,13 +122,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `album`
 --
 ALTER TABLE `album`
-  MODIFY `id_Album` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_Album` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `imagens`
 --
 ALTER TABLE `imagens`
-  MODIFY `id_imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `usuario`

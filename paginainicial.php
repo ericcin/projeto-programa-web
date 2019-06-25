@@ -24,7 +24,6 @@ include('Classes/verificalogin.php');
 <![endif]-->
 </head>
 <body id="page-top">
-
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -45,22 +44,52 @@ include('Classes/verificalogin.php');
       <div class="col-sm-7">
         <div class="header-content">
           <div class="header-content-inner">
-            <h1>Olá, <?php echo $_SESSION ['email'];?>!</h1>
+      
+            <!--  <h1>Olá, <?php// echo $_SESSION ['email'];?>!</h1> -->
+            <h1>Novos no memeG:</h1>
+            <?php
+            $banco = new mysqli("localhost","root","","galeria");
+            $sql= "SELECT * FROM imagens";
+            $resultado = $banco->query($sql);
+            while ($linha = mysqli_fetch_array($resultado)){
+              $album[] = $linha;
+            }
+            
+            ?>
+
+
+<table id="tabela">
+<tr>
+            <?php 
+            $cont = 0;
+            $contimg = 0;
+            
+            krsort($album, SORT_STRING);
+            foreach ($album as $foto) {
+              $cont++;
+              $contimg++;
+            ?>
+            <td>
+              
+            <img src="<?php echo $foto["imagem"]?>" width="260" height="200"/>
+            
+            </td>
+            <?php
+          if($cont==3){
+            echo "</tr>";
+            echo "<tr>";
+            $cont =0;
+          }
+          if($contimg==6){
+            exit;
+          }
+          } ?>
+</tr>
+</table>
             <a href="#download" class="btn btn-outline btn-xl page-scroll">Se junte a nós agora!</a></div>
         </div>
       </div>
-      <div class="col-sm-5">
-        <div class="device-container">
-          <div class="device-mockup iphone6_plus portrait white">
-            <div class="device">
-              <div class="screen"><img src="img/demo-screen-1.jpg" class="img-responsive" alt=""></div>
-              <div class="button"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+      
   
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

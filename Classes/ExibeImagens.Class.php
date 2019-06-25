@@ -14,7 +14,8 @@ class ExibeImagens extends Select{
     }
 
     public function ExecutarImagens($idAlbum){
-        $this->MontaImagens();
+        $this->MontaImagens(); 
+
     }
 
     private function MontaImagens(){

@@ -12,12 +12,20 @@ class ExibeAlbum extends Select{
         $this->ExecutaSelect($this->setQuery("SELECT * FROM album"));
         echo '<div id="alinha-album">';
         foreach($this->getResultado() as $albuns){
+           
                 echo '<div class="colunas2">
-                <a href="albuns.php?idAlbum='.$albuns['id_Album'].'"><img src="'.$albuns['capa'].'"/></a>
+                
+                <a href="albuns.php?idAlbum='.$albuns['id_Album'].'"><img src="'.$albuns['capa'].'" title="'.$albuns['titulo_album'].'"/></a>
                 </div>';
+               
             
         }
         echo '</div>';
+    }
+
+    public function listaAlbuns() {
+        $this->ExecutaSelect($this->setQuery("SELECT * FROM album"));
+        return $this->getResultado();
     }
 
 }

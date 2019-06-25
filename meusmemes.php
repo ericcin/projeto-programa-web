@@ -35,7 +35,7 @@ include('Classes/verificalogin.php');
       <ul class="nav navbar-nav navbar-right">
         <li><a class="page-scroll" href="minhastags.php">Minhas tags!</a></li>
         <li><a class="page-scroll" href="/Classes/logout.php">Sair</a></li>
-        <li><a class="page-scroll" href="#contact">Contact</a></li>
+        <li><a class="page-scroll" href="/customers">Editar</a></li>
       </ul>
     </div>
   </div>
@@ -53,15 +53,25 @@ include('Classes/verificalogin.php');
         $MeusAlbuns = new ExibeAlbum();
         $MeusAlbuns->ExecutaAlbum(); 
 
-        echo('id_Album');
+        
         ?>  
 
 <form id= "formulario" method="POST" action="/imagens_thumb/upload.php" enctype="multipart/form-data">
         * Meme!<br>
         <input type="file" name="meme">
-        <br> 
-        *Tag<br>
-        <input type="text" name="tag">
+        
+        <div class="form-group">
+    <label for="exampleFormControlSelect1">Tag!</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="tag">
+      <?php
+        $albuns = $MeusAlbuns->listaAlbuns();
+        foreach($albuns as $album) {
+          echo "<option value='{$album['id_Album']}'>" . $album['titulo_album'] . "</option>";
+        }
+      ?>      
+    </select>
+  </div>
+
         <br> 
         <input type="submit" value="Pronto!">
         </form>
